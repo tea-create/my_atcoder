@@ -1,0 +1,52 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "cStandard": "gnu11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64"
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:\\git-sdk-64\\mingw64\\include",
+                "C:\\git-sdk-64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\7.3.0\\include",
+                "C:\\git-sdk-64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\7.3.0\\include\\c++",
+                "C:\\git-sdk-64\\mingw64\\opt\\include",
+                "C:\\git-sdk-64\\mingw64\\x86_64-w64-mingw32\\include",
+                "[MINGW]\\lib\\gcc\\mingw32\\[VERSION]\\include\\c++\\mingw32"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "gnu11",
+            "compilerArgs": [],
+            "cppStandard": "c++14",
+            "intelliSenseMode": "windows-gcc-x64",
+            "intelliSenseModeIsExplicit": true,
+            "cStandardIsExplicit": true,
+            "cppStandardIsExplicit": true,
+            "compilerPathIsExplicit": true,
+            "compilerPath": "C:\\git-sdk-64\\mingw64\\bin\\gcc.exe",
+            "browse": {
+                "path": [
+                    "C:\\git-sdk-64\\mingw64\\include",
+                    "C:\\git-sdk-64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\7.3.0\\include",
+                    "C:\\git-sdk-64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\7.3.0\\include\\c++",
+                    "C:\\git-sdk-64\\mingw64\\opt\\include",
+                    "C:\\git-sdk-64\\mingw64\\x86_64-w64-mingw32\\include",
+                    "[MINGW]\\lib\\gcc\\mingw32\\[VERSION]\\include\\c++\\mingw32",
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+}
