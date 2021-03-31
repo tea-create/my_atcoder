@@ -1,28 +1,33 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#define rep(i, n) for (int i = 0; i < (int)(n); i++)
-#define rep2(i, m, n) for (int i = m-1; i < (int)(n); i++)
+
 #define ll long long
+#define rep(i, n) for (int i = 0; i < (int)(n); i++)
+#define lep(i, n) for (long i = 0; i < (long)(n); i++)
+#define llep(i, n) for (ll i = 0; i < (ll)(n); i++)
+#define rep2(i, m, n) for (int i = m-1; i < (int)(n); i++)
+#define repinf(i) for(int i = 0;;i++)
 #define _GLIBCXX_DEBUG
-#define min(a,b) (a > b ? b : a)
-#define max(a,b) (a > b ? a : b)
+#define min_(a,b) (a > b ? b : a)
+#define max_(a,b) (a > b ? a : b)
 #define quick_sort(X,Func) qsort(X, sizeof(X) / sizeof(X[0]), sizeof(X[0]), _upper_sort);
 #define down_sort(X) quick_sort(X, _down_sort);
 #define upper_sort(X) quick_sort(X, _upper_sort);
-#define TRUE (0==0)
-#define true TRUE
-#define FALSE (!TRUE)
-#define false FALSE
+// #define TRUE (0==0)
+// #define true TRUE
+// #define FALSE (!TRUE)
+// #define false FALSE
 #define elif
 
 ///////////////////////////////
-#define HONBAN
+// #define HONBAN
 ///////////////////////////////
 #ifndef HONBAN
 #define PRINTI(x) printf(#x " = %d\n", (x))
 #define PRINTLL(x) printf(#x " = %lld\n", (x))
-#else PRINTI(x)
+#else 
+#define PRINTI(x)
 #define PRINTLL(x)
 #endif
 
@@ -52,13 +57,19 @@ int _upper_sort(const void * n1, const void * n2){
   : (*(ll *)n1 < *(ll *)n2) ? -1
   :0;
 }
- 
+ll pow_(int a,int b){
+  int x=a;int y=b;ll ret=1;
+  if(a==0)return 0;
+  tag:
+  if(b==0) return ret;
+  ret*=(ll)a;b-=1;
+
+  goto tag;
+}
+
 int main(void){
-  int a = read(), b = read();
-  int n = 1;
-  for(int i = 0; i < 10000; i++){
-    n+= a-1;
-  }
-  printf("%d\n", n);
-  return 0;
+    int n=read(),k=read(),x=read(),y=read();
+    printf("%d", (k < n ? x * k + y * (n-k) : n * x));
+    return 0;
+    // AC
 }
