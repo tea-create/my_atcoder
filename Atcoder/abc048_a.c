@@ -67,8 +67,8 @@ ll pow_(int a,int b){
 }
 
 int main(void){
-    int a=read(), b=read(), c=read();int flag=1;
-    printf("%d\n", (a+b==c || a+c==b||c+b==a)?"Yes":"No");
+    getchar();getchar();getchar();getchar();getchar();getchar();getchar();getchar();
+    printf("A%cC\n", getchar());
     return 0;
     // AC
 }
