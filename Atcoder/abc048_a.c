@@ -67,8 +67,9 @@ ll pow_(int a,int b){
 }
 
 int main(void){
-    getchar();getchar();getchar();getchar();getchar();getchar();getchar();getchar();
-    printf("A%cC\n", getchar());
+    char sa[101],sb[101],sc[101];
+    scanf("%s %s %s",sa,sb,sc);
+    printf("A%cC\n", sb[0]);
     return 0;
     // AC
 }
