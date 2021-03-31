@@ -7,6 +7,8 @@
 			"command": "C:\\git-sdk-64\\mingw64\\bin\\gcc.exe",
 			"args": [
 				"-g",
+                // "-std=gnu++1y",
+                "-O0",
 				"${file}",
 				"-o",
 				"${fileDirname}\\build\\${fileBasenameNoExtension}.exe"
