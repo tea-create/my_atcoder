@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
 
@@ -14,18 +13,20 @@ int main(void){
     int n = read();
     int r1,r2;
     int t;
-    char s[1001][16];
+    int max1, max2;
+    char s[1001][17];
     rep(i,n){
-      t=0;
         scanf("%s %d", &(s[i]), &t);
-        if(t  > r2){
-                r1 = t;
-          break;
-        }
          if(t > r1){
+                r1 = t;
+           		max1=i;
+             	continue;
+        }
+        if(t  > r2){
                 r2 = t;
-           break;
+          		max2 = i;
+            	continue;
         }
     }
-    printf("%s\n", s[r2]);
+  printf("%s\n", s[max2]);
 }

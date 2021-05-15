@@ -5,8 +5,8 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
-            "type": "cppdbg",
+            "name": "(gdb)",
+            "type": "",
             "request": "launch",
            "program": "${fileDirname}\\build\\${fileBasenameNoExtension}.exe", 
             "args": [],
