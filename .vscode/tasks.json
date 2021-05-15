@@ -2,7 +2,7 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"type": "cppbuild",
+			"type": "shell",
 			"label": "C/C++: gcc.exe アクティブなファイルのビルド",
 			"command": "C:\\git-sdk-64\\mingw64\\bin\\gcc.exe",
 			"args": [
@@ -21,78 +21,81 @@
 			],
 			"group": "build",
 			"detail": "コンパイラ: C:\\git-sdk-64\\mingw64\\bin\\gcc.exe"
-		},
-		// ************ //
-        // debugビルド
-        // ************ //
-        {
-            "label": "build-debug",   //変更点①
-            "type": "shell",
-            "command": "powershell",    //変更点②
-            "args": [
-                "-Command",
-                "\"cmake -DCMAKE_BUILD_TYPE=Debug -G \\\"MinGW Makefiles\\\" ..; mingw32-make.exe -f Makefile\""   //変更点③ cmake,mingwへのパス設定済み
-            ],
-            //変更点④
-            "options": {
-                "cwd": "${workspaceRoot}/debug"
-            },
-            "group": "build",
-            "presentation": {
-                // Reveal the output only if unrecognized errors occur.
-                "reveal": "always"
-            },
-            // Use the standard MS compiler pattern to detect errors, warnings and infos
-            //変更点⑤
-            "problemMatcher": {
-                "owner": "gcc",
-                "fileLocation": "absolute",
-                "pattern": {
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(.*):\\s+(.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "column": 3,
-                    "endLine": 2,
-                    "endColumn": 3,
-                    "severity": 4,
-                    "message": 5
-                }
-            }
-        },
-        // ************ //
-        // releaseビルド
-        // ************ //
-        {
-            "label": "build-release",
-            "type": "shell",
-            "command": "powershell",
-            "args": [
-                "-Command",
-                "\"cmake -DCMAKE_BUILD_TYPE=Release -G \\\"MinGW Makefiles\\\" ..; mingw32-make.exe -f Makefile\""   //変更点③ cmake,mingwへのパス設定済み
-            ],
-            "options": {
-                "cwd": "${workspaceRoot}/release"
-            },
-            "group": "build",
-            "presentation": {
-                // Reveal the output only if unrecognized errors occur.
-                "reveal": "always"
-            },
-            // Use the standard MS compiler pattern to detect errors, warnings and infos
-            "problemMatcher": {
-                "owner": "gcc",
-                "fileLocation": "absolute",
-                "pattern": {
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(.*):\\s+(.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "column": 3,
-                    "endLine": 2,
-                    "endColumn": 3,
-                    "severity": 4,
-                    "message": 5
-                }
-            }
-        }
+		}
+        // ,
+		// // ************ //
+        // // debugビルド
+        // // ************ //
+        // {
+        //     "label": "build-debug",   //変更点①
+        //     "type": "shell",
+        //     "command": "powershell",    //変更点②
+        //     "args": [
+        //         "-Command",
+        //         "\"cmake -DCMAKE_BUILD_TYPE=Debug -G \\\"MinGW Makefiles\\\" ..; mingw32-make.exe -f Makefile\""   //変更点③ cmake,mingwへのパス設定済み
+        //     ],
+        //     //変更点④
+        //     "options": {
+        //         "cwd": "${fileDirname}\\build\\"
+        //     },
+        //     "group": "build",
+        //     "presentation": {
+        //         // Reveal the output only if unrecognized errors occur.
+        //         "reveal": "always"
+        //     },
+        //     // Use the standard MS compiler pattern to detect errors, warnings and infos
+        //     //変更点⑤
+        //     "problemMatcher": {
+        //         "owner": "gcc",
+        //         "fileLocation": "absolute",
+        //         "pattern": {
+        //             "regexp": "^(.*):(\\d+):(\\d+):\\s+(.*):\\s+(.*)$",
+        //             "file": 1,
+        //             "line": 2,
+        //             "column": 3,
+        //             "endLine": 2,
+        //             "endColumn": 3,
+        //             "severity": 4,
+        //             "message": 5
+        //         }
+        //     }
+        // }
+
+        // ,
+        // // ************ //
+        // // releaseビルド
+        // // ************ //
+        // {
+        //     "label": "build-release",
+        //     "type": "shell",
+        //     "command": "powershell",
+        //     "args": [
+        //         "-Command",
+        //         "\"cmake -DCMAKE_BUILD_TYPE=Release -G \\\"MinGW Makefiles\\\" ..; mingw32-make.exe -f Makefile\""   //変更点③ cmake,mingwへのパス設定済み
+        //     ],
+        //     "options": {
+        //         "cwd": "${fileDirname}/release"
+        //     },
+        //     "group": "build",
+        //     "presentation": {
+        //         // Reveal the output only if unrecognized errors occur.
+        //         "reveal": "always"
+        //     },
+        //     // Use the standard MS compiler pattern to detect errors, warnings and infos
+        //     "problemMatcher": {
+        //         "owner": "gcc",
+        //         "fileLocation": "absolute",
+        //         "pattern": {
+        //             "regexp": "^(.*):(\\d+):(\\d+):\\s+(.*):\\s+(.*)$",
+        //             "file": 1,
+        //             "line": 2,
+        //             "column": 3,
+        //             "endLine": 2,
+        //             "endColumn": 3,
+        //             "severity": 4,
+        //             "message": 5
+        //         }
+        //     }
+        // }
 	]
 }

@@ -6,7 +6,8 @@
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
 #define lep(i, n) for (long i = 0; i < (long)(n); i++)
 #define llep(i, n) for (ll i = 0; i < (ll)(n); i++)
-#define rep2(i, m, n) for (int i = m-1; i < (int)(n); i++)
+#define rep2(i, m, n) for (int i = m; i < (int)(n)+1; i++)
+#define llep2(i, m, n) for (ll i = m; i < (ll)(n)+1; i++)
 #define repinf(i) for(int i = 0;;i++)
 #define _GLIBCXX_DEBUG
 #define min_(a,b) (a > b ? b : a)
@@ -65,8 +66,45 @@ ll pow_(int a,int b){
   ret*=(ll)a;b-=1;
   goto tag;
 }
+int keta_(int tar, int keta){
+    if(tar == 0){return 1;}
+    if(tar /10 != 0){return keta_(tar/10, keta+1);}
+    return keta;
+}
+int keta(int tar){
+    return keta_(tar, 1);
+}
 
 int main(void){
-    
-    return 0;
+    ll a = read(), b = read();
+    ll sum=0;
+    if(a>b){
+        llep2(i,1,a){
+            sum+=i;
+            printf("%lld ", i);
+        }
+        llep2(i,1,b){
+            if(i==b){
+            sum-=i;
+                printf("%lld\n", 0-sum);
+                break;
+            }
+            printf("%lld ",0-i);
+        }
+    }else{
+        llep2(i,1,b){
+            sum+=i;
+            printf("%lld ", 0-i);
+        }
+        llep2(i,1,a){
+            sum-=i;
+            if(i==a){
+                printf("%lld\n", sum);
+                break;
+            }
+            printf("%lld ",i);
+        sum-=i;
+        }
+    }
+    return 0;// WA←ここ重要
 }
