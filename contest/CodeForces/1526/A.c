@@ -3,22 +3,13 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
-#include <bits/stdc++.h>
-using namespace std;
-///////////////////////////////
-#define DEBUG
-///////////////////////////////
 
-#pragma region Macros
-
-#define NULL ((void *)0)
-#define null NULL
+#define ll long long
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
 #define lep(i, n) for (long i = 0; i < (long)(n); i++)
 #define llep(i, n) for (ll i = 0; i < (ll)(n); i++)
 #define rep2(i, m, n) for (int i = m-1; i < (int)(n); i++)
 #define repinf(i) for(int i = 0;;i++)
-#define llepinf(i) for(ll i = 0;;i++)
 #define _GLIBCXX_DEBUG
 #define min_(a,b) (a > b ? b : a)
 #define max_(a,b) (a > b ? a : b)
@@ -31,40 +22,19 @@ using namespace std;
 #define false FALSE
 #define elif
 
+///////////////////////////////
+#define DEBUG
+///////////////////////////////
 #ifdef DEBUG
 
 #define PRINTI(x) printf(#x " = %d\n", (x))
 #define PRINTLL(x) printf(#x " = %lld\n", (x))
-#define LOW_PRINT(x) printf(#x "\n")
 
 #else 
 
 #define PRINTI(x)
 #define PRINTLL(x)
 #endif
-
-#pragma endregion
-
-#pragma region stdints
-
-#define char char
-#define uchar unsigned char
-
-#define _short short
-#define short int16_t
-#define ushort uint16_t
-#define WCHAR wchar_t
-
-#define _int int
-#define long int
-#define _long int
-#define int int32_t
-#define uint int32_t
-
-#define ll int64_t
-#define ull uint64_t
-
-#pragma endregion
 
 ll llead(){
     ll x=0; char c;
@@ -108,16 +78,29 @@ int keta_(int tar, int keta){
 int keta(int tar){
     return keta_(tar, 1);
 }
-int kaijo(int tar){
-  int sum = 0;
-  int i = tar;
-  start:
-  if ( i == 0)return sum;
-  sum += i;
-  i-=1;
-  goto start;
+
+int proc(int *array, int size){
+    int a[size];
+    arr_cpy(array, a);
+    rep(i,size){
+        printf("%d,", a[i]);
+
+    }
+    return 0;
+
 }
+
 int main(void){
-    ll n = read(), k = read();
+    int t = read();
+    int n = 0;
+    int a[51];
+    rep(i,t){
+        n = read();
+        rep(j,n * 2){
+            a[j] = read();
+        }
+        proc(&a[0], 2*n);
+
+    }
     return 0;
 }

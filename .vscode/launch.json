@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "(gdb)",
-            "type": "",
+            "type": "cppdbg",
             "request": "launch",
            "program": "${fileDirname}\\build\\${fileBasenameNoExtension}.exe", 
             "args": [],

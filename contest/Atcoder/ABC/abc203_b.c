@@ -3,8 +3,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
-#include <bits/stdc++.h>
-using namespace std;
+
 ///////////////////////////////
 #define DEBUG
 ///////////////////////////////
@@ -18,7 +17,6 @@ using namespace std;
 #define llep(i, n) for (ll i = 0; i < (ll)(n); i++)
 #define rep2(i, m, n) for (int i = m-1; i < (int)(n); i++)
 #define repinf(i) for(int i = 0;;i++)
-#define llepinf(i) for(ll i = 0;;i++)
 #define _GLIBCXX_DEBUG
 #define min_(a,b) (a > b ? b : a)
 #define max_(a,b) (a > b ? a : b)
@@ -118,6 +116,9 @@ int kaijo(int tar){
   goto start;
 }
 int main(void){
-    ll n = read(), k = read();
-    return 0;
+    int n = read(), k = read();
+    int sum = 100 * kaijo(n) * k;
+    sum += (kaijo(k) * n);
+    printf("%d", sum);
+    return 0; // AC
 }

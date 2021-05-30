@@ -3,8 +3,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
-#include <bits/stdc++.h>
-using namespace std;
+
 ///////////////////////////////
 #define DEBUG
 ///////////////////////////////
@@ -18,7 +17,6 @@ using namespace std;
 #define llep(i, n) for (ll i = 0; i < (ll)(n); i++)
 #define rep2(i, m, n) for (int i = m-1; i < (int)(n); i++)
 #define repinf(i) for(int i = 0;;i++)
-#define llepinf(i) for(ll i = 0;;i++)
 #define _GLIBCXX_DEBUG
 #define min_(a,b) (a > b ? b : a)
 #define max_(a,b) (a > b ? a : b)
@@ -108,16 +106,11 @@ int keta_(int tar, int keta){
 int keta(int tar){
     return keta_(tar, 1);
 }
-int kaijo(int tar){
-  int sum = 0;
-  int i = tar;
-  start:
-  if ( i == 0)return sum;
-  sum += i;
-  i-=1;
-  goto start;
-}
+
 int main(void){
-    ll n = read(), k = read();
-    return 0;
+    int a = read();
+    int b = read();
+    int c = read();
+    printf("%d\n", (a==b ? a : a == c ? a : b == c ? b : 0));
+    return 0;//AC
 }

@@ -1,23 +1,16 @@
 #include <stdio.h>
-#define rep(i, n) for (int i = 0; i < (int)(n); i++)
-
-int read(){
-    int x=0; char c;
-    while(((c=getchar())>'9' || c<'0')&&c!='-');
-    const int f=(c=='-')&&(c=getchar());
-    while(x=x*10-48+c,(c=getchar())>='0'&&c<='9');
-    return f?-x:x;
-}
-
 int main(void){
-    int n = read();
+    int n;
+    scanf("%d", &n);
     int r1,r2;
     int t;
     int max1, max2;
     char s[1001][17];
-    rep(i,n){
+    for (register int i = 0; i < n; i++){
         scanf("%s %d", &(s[i]), &t);
          if(t > r1){
+                r2 = r1;
+                max2 = max1;
                 r1 = t;
            		max1=i;
              	continue;
@@ -29,4 +22,5 @@ int main(void){
         }
     }
   printf("%s\n", s[max2]);
+  return 0;//AC
 }

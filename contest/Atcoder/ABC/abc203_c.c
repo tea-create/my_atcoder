@@ -119,5 +119,22 @@ int kaijo(int tar){
 }
 int main(void){
     ll n = read(), k = read();
-    return 0;
+    ll f[n][2];
+    llep(i , n){
+        f[i][0] = read();
+        f[i][1] = read();
+    }
+    sort(f[0], f[n]);
+    ll m, j;
+    llep(i, n){
+        if(f[j][0] > m){
+            printf("%d", i);
+            break;
+        }
+        llepinf(k){
+            f[j][0] == i;
+            m = f[j][1];
+        }
+    }
+    return 0;//TODO: WA
 }
