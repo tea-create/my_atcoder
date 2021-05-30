@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
-#include <bits/stdc++.h>
+
 using namespace std;
 ///////////////////////////////
 #define DEBUG
@@ -20,22 +20,16 @@ using namespace std;
 #define repinf(i) for(int i = 0;;i++)
 #define llepinf(i) for(ll i = 0;;i++)
 #define _GLIBCXX_DEBUG
-#define min_(a,b) (a > b ? b : a)
-#define max_(a,b) (a > b ? a : b)
 
 #define arr_cpy(from, to) memcpy(to, from, sizeof(from))
 
-
-#define true TRUE
-#define FALSE (!TRUE)
-#define false FALSE
 #define elif
 
 #ifdef DEBUG
 
 #define PRINTI(x) printf(#x " = %d\n", (x))
 #define PRINTLL(x) printf(#x " = %lld\n", (x))
-#define LOW_PRINT(x) printf(#x "\n")
+#define RAW_PRINT(x) printf(#x "\n")
 
 #else 
 
@@ -79,18 +73,6 @@ int read(){
     const int f=(c=='-')&&(c=getchar());
     while(x=x*10-48+c,(c=getchar())>='0'&&c<='9');
     return f?-x:x;
-}
-int _down_sort(const void * n1, const void * n2){
-return 
-    (*(ll *)n1 > *(ll *)n2) ? -1
-  : (*(ll *)n1 < *(ll *)n2) ? 1
-  :0;
-}
-int _upper_sort(const void * n1, const void * n2){
-  return 
-    (*(ll *)n1 > *(ll *)n2) ? 1
-  : (*(ll *)n1 < *(ll *)n2) ? -1
-  :0;
 }
 ll pow_(int a,int b){
   int x=a;int y=b;ll ret=1;

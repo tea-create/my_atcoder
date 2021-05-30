@@ -4,7 +4,8 @@
         "math.h": "c",
         "stdlib.h": "c",
         "windows.h": "c",
-        "windef.h": "c"
+        "windef.h": "c",
+        "random": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
