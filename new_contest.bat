@@ -46,9 +46,12 @@ exit /b
 ;Yukicoder
 ;//////////////////////////////////////
 :Yukicoder
+    cd ./yukicoder/
     set /p pnum="Problem_Number:"
     set /p pcnt="Promlem_Count:"
     set /a pcnt=pcnt-1
+    mkdir !pnum!
+    cd ./!pnum!/
     for /L %%e in (0,1,!pcnt!) do (
         echo nul > No!pnum!.c
         set /a pnum=pnum+1

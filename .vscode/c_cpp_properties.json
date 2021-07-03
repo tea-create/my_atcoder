@@ -13,33 +13,27 @@
         {
             "name": "Win64",
             "includePath": [
-                "C:\\git-sdk-64\\mingw64\\include",
                 "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0",
-                "C:\\git-sdk-64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\10.2.0\\include",
-                "C:\\git-sdk-64\\mingw64\\x86_64-w64-mingw32\\include\\",
-                "C:\\git-sdk-64\\mingw64\\include"
+                "C:\\git-sdk-64\\mingw64\\x86_64-w64-mingw32\\include"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
-                "_UNICODE"
+                "_UNICODE",
+                "USE_FULL_LL_DRIVER"
             ],
             "cStandard": "gnu11",
             "compilerArgs": [],
-            "cppStandard": "c++14",
+            "cppStandard": "gnu++17",
             "intelliSenseMode": "windows-gcc-x64",
-            "intelliSenseModeIsExplicit": true,
-            "cStandardIsExplicit": true,
-            "cppStandardIsExplicit": true,
-            "compilerPathIsExplicit": true,
             "compilerPath": "C:\\git-sdk-64\\mingw64\\bin\\gcc.exe",
             "browse": {
                 "path": [
                     "C:\\git-sdk-64\\mingw64\\include",
-              "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0",
+                    "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0",
                     "C:\\git-sdk-64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\10.2.0\\include",
-              "C:\\git-sdk-64\\mingw64\\x86_64-w64-mingw32\\include\\",
-                  "C:\\git-sdk-64\\mingw64\\include"
+                    "C:\\git-sdk-64\\mingw64\\x86_64-w64-mingw32\\include\\",
+                    "C:\\git-sdk-64\\mingw64\\include",
                     "${workspaceFolder}"
                 ],
                 "limitSymbolsToIncludedHeaders": true
@@ -64,10 +58,6 @@
             ],
             "cppStandard": "c++14",
             "intelliSenseMode": "gcc-x64",
-            "intelliSenseModeIsExplicit": true,
-            "cStandardIsExplicit": true,
-            "cppStandardIsExplicit": true,
-            "compilerPathIsExplicit": true,
             "compilerPath": "C:\\git-sdk-64\\mingw64\\bin\\gcc.exe",
             "browse": {
                 "path": [
