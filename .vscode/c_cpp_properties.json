@@ -61,12 +61,9 @@
             "compilerPath": "C:\\git-sdk-64\\mingw64\\bin\\gcc.exe",
             "browse": {
                 "path": [
-                    "C:\\git-sdk-64\\mingw64\\include",
-                    "C:\\git-sdk-64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\7.3.0\\include",
-                    "C:\\git-sdk-64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\7.3.0\\include\\c++",
-                    "C:\\git-sdk-64\\mingw64\\opt\\include",
-                    "C:\\git-sdk-64\\mingw64\\x86_64-w64-mingw32\\include",
-                    "[MINGW]\\lib\\gcc\\mingw32\\[VERSION]\\include\\c++\\mingw32",
+                    "C:\\git-sdk-64\\mingw64\\include\\",
+                    "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\",
+                    "C:\\git-sdk-64\\mingw64\\x86_64-w64-mingw32\\include\\",
                     "${workspaceFolder}"
                 ],
                 "limitSymbolsToIncludedHeaders": true

@@ -51,5 +51,7 @@ Mkfile.old
 dkms.conf
 
 #Folder
+*.skrold
 .history/
 others/School/
+new_contest.bat

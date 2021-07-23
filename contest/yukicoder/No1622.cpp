@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+
+///////////////////////////////
+#define DEBUG
+///////////////////////////////
+
+#define PI 3.14159265359
+#define MOD 1000000007
+#define rep(i, n) for (int i = 0; i < (int)(n); i++)
+#define lep(i, n) for (long i = 0; i < (long)(n); i++)
+#define llep(i, n) for (long long i = 0; i < (long long)(n); i++)
+#define rep2(i, m, n) for (int i = m-1; i < (int)(n); i++)
+#define lep2(i, m, n) for (long i = m-1; i < (long)(n); i++)
+#define llep2(i, m, n) for (long long i = m-1; i < (long long)(n); i++)
+#define repinf(i) for(int i = 0;;i++)
+#define lepinf(i) for(long i = 0;;i++)
+#define llepinf(i) for(long long i = 0;;i++)
+#define _GLIBCXX_DEBUG
+
+
+
+int read(){
+	int x = 0; char c;
+	while(((c=getchar())>'9' || c<'0')&&c!='-');
+	const int f=(c=='-')&&(c=getchar());
+	while(x=x*10-48+c,(c=getchar())>='0'&&c<='9');
+	return f?-x:x;
+}
+
+#include <cmath>
+#include <limits>
+#include <iostream>
+int main(void){
+	double n = (double)read();
+	double r = 0;
+	double sq = sqrt(3);
+	rep(i,n){
+		r = (double)read();
+		printf("%lf\n", r*r*3.0*sq/4.0);
+	}
+return 0;// AC:https://yukicoder.me/submissions/682605
+}

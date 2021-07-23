@@ -2,12 +2,14 @@
 setlocal enabledelayedexpansion
 
 goto main
+
+
 ;////////////////////////////////////
 :AC
 ;////////////////////////////////////
 cd ./Atcoder/
-    SET /P Axx="Contest_kinda:"
-    SET /P cid="contest_ID:"
+    SET /P Axx="Contest_kinda[ABC, ARC, AGC, others]:"
+    SET /P cid="contest_ID[xxx]:"
     if /i "!Axx!" == "ABC" ( 
         goto ABC
     ) else if /i "!Axx!" == "ARC" ( 
@@ -31,12 +33,12 @@ cd ./others/
     cd ./!Axx!/
     mkdir !cid!
     cd ./!cid!/
-    echo nul > A.c
-    echo nul > B.c
-    echo nul > C.c
-    echo nul > D.c
-    echo nul > E.c
-    echo nul > F.c
+    echo //new_created: > A.cpp
+    echo //new_created: > B.cpp
+    echo //new_created: > C.cpp
+    echo //new_created: > D.cpp
+    echo //new_created: > E.cpp
+    echo //new_created: > F.cpp
     mkdir Build
     mkdir Release
     mkdir debug
@@ -47,13 +49,11 @@ exit /b
 ;//////////////////////////////////////
 :Yukicoder
     cd ./yukicoder/
-    set /p pnum="Problem_Number:"
-    set /p pcnt="Promlem_Count:"
+    set /p pnum="Problem_Number[first problem's number]:"
+    set /p pcnt="Promlem_Count[how many problems?]:"
     set /a pcnt=pcnt-1
-    mkdir !pnum!
-    cd ./!pnum!/
     for /L %%e in (0,1,!pcnt!) do (
-        echo nul > No!pnum!.c
+        echo //new_created: > No!pnum!.cpp
         set /a pnum=pnum+1
     )
 exit /b
@@ -63,17 +63,17 @@ exit /b
 ;//////////////////////////////////////
 :CodeForces
     cd ./CodeForces/
-    set /P cid="Contest_ID:"
+    set /P cid="Contest_ID[xxxx]:"
     mkdir !cid!
     cd ./!cid!/
     mkdir problem
     cd problem
-    echo nul > A.c
-    echo nul > B.c
-    echo nul > C.c
-    echo nul > D.c
-    echo nul > E.c
-    echo nul > F.c
+    echo //new_created: > A.cpp
+    echo //new_created: > B.cpp
+    echo //new_created: > C.cpp
+    echo //new_created: > D.cpp
+    echo //new_created: > E.cpp
+    echo //new_created: > F.cpp
     mkdir Build
     mkdir Release
     mkdir debug
@@ -85,7 +85,7 @@ exit /b
 ;//////////////////////////////////////
 :main
 
-SET /P Con="contest:"
+SET /P Con="contest[Atcoder, YukiCoder, CodeForces]:"
 cd ./contest/
 echo !Con!
 if /i "!Con!" == "Atcoder" ( 

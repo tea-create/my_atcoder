@@ -5,7 +5,11 @@
         "stdlib.h": "c",
         "windows.h": "c",
         "windef.h": "c",
-        "random": "c"
+        "random": "c",
+        "cstdlib": "c",
+        "algorithm": "c",
+        "vector": "cpp",
+        "cmath": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
