@@ -5,16 +5,16 @@ goto main
 
 
 ;////////////////////////////////////
-:AC
+:AtCoder
 ;////////////////////////////////////
 cd ./Atcoder/
-    SET /P Axx="Contest_kinda[ABC, ARC, AGC, others]:"
+    SET /P Contest_kind="Contest_kinda[ABC, ARC, AGC, others]:"
     SET /P cid="contest_ID[xxx]:"
-    if /i "!Axx!" == "ABC" ( 
+    if /i "!Contest_kind!" == "ABC" ( 
         goto ABC
-    ) else if /i "!Axx!" == "ARC" ( 
+    ) else if /i "!Contest_kind!" == "ARC" ( 
         goto ARC
-    ) else if /i "!Axx!" == "AGC" ( 
+    ) else if /i "!Contest_kind!" == "AGC" ( 
         goto AGC
     ) else (
         goto AC_Others
@@ -22,15 +22,15 @@ cd ./Atcoder/
 exit /b
 
 ;//////////////////////////////////////
-;ABC
+;Atcoder_Contests
 ;//////////////////////////////////////
 :AC_Others
 cd ./others/
 :ABC
 :ARC
 :AGC
-    mkdir !Axx!
-    cd ./!Axx!/
+    mkdir !Contest_kind!
+    cd ./!Contest_kind!/
     mkdir !cid!
     cd ./!cid!/
     echo //new_created: > A.cpp
