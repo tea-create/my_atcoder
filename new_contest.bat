@@ -5,8 +5,9 @@ goto main
 
 
 ;////////////////////////////////////
-:AtCoder
+;AtCoder
 ;////////////////////////////////////
+:AtCoder
 cd ./Atcoder/
     SET /P Contest_kind="Contest_kinda[ABC, ARC, AGC, others]:"
     SET /P cid="contest_ID[xxx]:"
@@ -89,7 +90,7 @@ SET /P Con="contest[Atcoder, YukiCoder, CodeForces]:"
 cd ./contest/
 echo !Con!
 if /i "!Con!" == "Atcoder" ( 
-    goto AC
+    goto Atcoder
 ) else if /i "!Con!" == "YukiCoder" ( 
     goto Yukicoder
 ) else if /i "!Con!" == "CodeForces" ( 
