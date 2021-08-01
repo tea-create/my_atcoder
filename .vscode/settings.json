@@ -9,7 +9,9 @@
         "cstdlib": "c",
         "algorithm": "c",
         "vector": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "ostream": "cpp",
+        "iostream": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
