@@ -4,18 +4,19 @@
     // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "(gdb)",
             "type": "cppdbg",
             "request": "launch",
-           "program": "${fileDirname}\\build\\${fileBasenameNoExtension}.exe", 
+           "program": "${fileDirname}\\build\\${fileBasenameNoExtension}.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
-            "externalConsole": true,
+            "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:\\git-sdk-64\\mingw64\\bin\\gdb.exe", 
+            "miDebuggerPath": "C:\\git-sdk-64\\mingw64\\bin\\gdb.exe",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
