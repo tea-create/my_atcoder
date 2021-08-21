@@ -1,6 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
-
+cd /d %~dp0
 goto main
 
 
@@ -11,11 +11,11 @@ goto main
 cd ./Atcoder/
     SET /P Contest_kind="Contest_kinda[ABC, ARC, AGC, others]:"
     SET /P cid="contest_ID[xxx]:"
-    if /i "!Contest_kind!" == "ABC" ( 
+    if /i "!Contest_kind!" == "ABC" (
         goto ABC
-    ) else if /i "!Contest_kind!" == "ARC" ( 
+    ) else if /i "!Contest_kind!" == "ARC" (
         goto ARC
-    ) else if /i "!Contest_kind!" == "AGC" ( 
+    ) else if /i "!Contest_kind!" == "AGC" (
         goto AGC
     ) else (
         goto AC_Others
@@ -32,6 +32,9 @@ cd ./others/
 :AGC
     mkdir !Contest_kind!
     cd ./!Contest_kind!/
+	if exist !cid! (
+		goto end
+	)
     mkdir !cid!
     cd ./!cid!/
     echo //new_created: > A.cpp
@@ -54,7 +57,11 @@ exit /b
     set /p pcnt="Promlem_Count[how many problems?]:"
     set /a pcnt=pcnt-1
     for /L %%e in (0,1,!pcnt!) do (
+		if exist 8No!pnum!.cpp (
+			goto skip
+	   )
         echo //new_created: > No!pnum!.cpp
+		:skip
         set /a pnum=pnum+1
     )
 exit /b
@@ -65,6 +72,9 @@ exit /b
 :CodeForces
     cd ./CodeForces/
     set /P cid="Contest_ID[xxxx]:"
+	if exist !cid! (
+		goto end
+	)
     mkdir !cid!
     cd ./!cid!/
     mkdir problem
@@ -89,11 +99,14 @@ exit /b
 SET /P Con="contest[Atcoder, YukiCoder, CodeForces]:"
 cd ./contest/
 echo !Con!
-if /i "!Con!" == "Atcoder" ( 
+if /i "!Con!" == "Atcoder" (
     goto Atcoder
-) else if /i "!Con!" == "YukiCoder" ( 
+) else if /i "!Con!" == "YukiCoder" (
     goto Yukicoder
-) else if /i "!Con!" == "CodeForces" ( 
+) else if /i "!Con!" == "CodeForces" (
     goto CodeForces
 )
+exit /b
+
+:end
 exit /b

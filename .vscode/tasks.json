@@ -1,101 +1,64 @@
 {
 	"version": "2.0.0",
 	"tasks": [
+		// {
+		// 	"type": "shell",
+		// 	"label": "C/C++: gcc.exe",
+		// 	"command": "C:\\git-sdk-64\\mingw64\\bin\\gcc.exe",
+		// 	"args": [
+		// 		"-g",
+		// 		"-O0",
+		// 		"${file}",
+		// 		"-o",
+		// 		"${fileDirname}\\build\\${fileBasenameNoExtension}.exe"
+		// 	],
+		// 	"options": {
+		// 		"cwd": "C:\\git-sdk-64\\mingw64\\bin"
+		// 	},
+		// 	"problemMatcher": [
+		// 		"$gcc"
+		// 	],
+		// 	"group": "build",
+		// 	"detail": "コンパイラ: C:\\git-sdk-64\\mingw64\\bin\\gcc.exe"
+		// },
 		{
-			"type": "shell",
-			"label": "C/C++: gcc.exe アクティブなファイルのビルド",
-			"command": "C:\\git-sdk-64\\mingw64\\bin\\gcc.exe",
+			"type": "cppbuild",
+			"label": "C/C++: g++.exe アクティブなファイルのビルド",
+			"command": "C:/git-sdk-64/usr/bin/g++.exe",
 			"args": [
 				"-g",
-                // "-std=gnu++1y",
-                "-O0",
 				"${file}",
 				"-o",
-				"${fileDirname}\\build\\${fileBasenameNoExtension}.exe"
+				"${fileDirname}\\build\\${fileBasenameNoExtension}.exe",
+				"-g",
+				"-DDEBUG"
 			],
 			"options": {
-				"cwd": "C:\\git-sdk-64\\mingw64\\bin"
+				"cwd": "C:/git-sdk-64/usr/bin"
 			},
 			"problemMatcher": [
 				"$gcc"
 			],
 			"group": "build",
-			"detail": "コンパイラ: C:\\git-sdk-64\\mingw64\\bin\\gcc.exe"
+			"detail": "コンパイラ: C:/git-sdk-64/usr/bin/g++.exe"
+		},
+		{"type": "cppbuild",
+			"label": "C/C++: リンカ出力",
+			"command": "C:/git-sdk-64/usr/bin/g++.exe",
+			"args": [
+				"-save-temps",
+				"${file}",
+				"-g",
+				"-DDEBUG"
+			],
+			"options": {
+				"cwd": "C:/git-sdk-64/usr/bin"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "コンパイラ: C:/git-sdk-64/usr/bin/g++.exe"
 		}
-        // ,
-		// // ************ //
-        // // debugビルド
-        // // ************ //
-        // {
-        //     "label": "build-debug",   //変更点①
-        //     "type": "shell",
-        //     "command": "powershell",    //変更点②
-        //     "args": [
-        //         "-Command",
-        //         "\"cmake -DCMAKE_BUILD_TYPE=Debug -G \\\"MinGW Makefiles\\\" ..; mingw32-make.exe -f Makefile\""   //変更点③ cmake,mingwへのパス設定済み
-        //     ],
-        //     //変更点④
-        //     "options": {
-        //         "cwd": "${fileDirname}\\build\\"
-        //     },
-        //     "group": "build",
-        //     "presentation": {
-        //         // Reveal the output only if unrecognized errors occur.
-        //         "reveal": "always"
-        //     },
-        //     // Use the standard MS compiler pattern to detect errors, warnings and infos
-        //     //変更点⑤
-        //     "problemMatcher": {
-        //         "owner": "gcc",
-        //         "fileLocation": "absolute",
-        //         "pattern": {
-        //             "regexp": "^(.*):(\\d+):(\\d+):\\s+(.*):\\s+(.*)$",
-        //             "file": 1,
-        //             "line": 2,
-        //             "column": 3,
-        //             "endLine": 2,
-        //             "endColumn": 3,
-        //             "severity": 4,
-        //             "message": 5
-        //         }
-        //     }
-        // }
-
-        // ,
-        // // ************ //
-        // // releaseビルド
-        // // ************ //
-        // {
-        //     "label": "build-release",
-        //     "type": "shell",
-        //     "command": "powershell",
-        //     "args": [
-        //         "-Command",
-        //         "\"cmake -DCMAKE_BUILD_TYPE=Release -G \\\"MinGW Makefiles\\\" ..; mingw32-make.exe -f Makefile\""   //変更点③ cmake,mingwへのパス設定済み
-        //     ],
-        //     "options": {
-        //         "cwd": "${fileDirname}/release"
-        //     },
-        //     "group": "build",
-        //     "presentation": {
-        //         // Reveal the output only if unrecognized errors occur.
-        //         "reveal": "always"
-        //     },
-        //     // Use the standard MS compiler pattern to detect errors, warnings and infos
-        //     "problemMatcher": {
-        //         "owner": "gcc",
-        //         "fileLocation": "absolute",
-        //         "pattern": {
-        //             "regexp": "^(.*):(\\d+):(\\d+):\\s+(.*):\\s+(.*)$",
-        //             "file": 1,
-        //             "line": 2,
-        //             "column": 3,
-        //             "endLine": 2,
-        //             "endColumn": 3,
-        //             "severity": 4,
-        //             "message": 5
-        //         }
-        //     }
-        // }
 	]
 }

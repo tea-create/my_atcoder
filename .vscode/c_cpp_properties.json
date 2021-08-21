@@ -3,9 +3,9 @@
         {
             "name": "Linux",
             "includePath": [
-				// "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\x86_64-w64-mingw32\\**",
-				// "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\tr1\\**",
-				// "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\**",
+                // "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\x86_64-w64-mingw32\\**",
+                // "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\tr1\\**",
+                // "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\**",
                 "${workspaceFolder}/**"
             ],
             "defines": [],
@@ -16,12 +16,10 @@
         {
             "name": "Win64",
             "includePath": [
-				// "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\x86_64-w64-mingw32\\**",
-				// "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\tr1\\**",
-				// "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\**",
-				"C:\\git-sdk-64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\10.2.0\\include\\",
-				"C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\x86_64-w64-mingw32\\**"
-
+                "C:\\git-sdk-64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\10.2.0\\include\\",
+                "C:\\git-sdk-64\\mingw64\\include\\**",
+                "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\**",
+                "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\tr1\\**"
             ],
             "defines": [
                 "_DEBUG",
@@ -33,14 +31,14 @@
             "compilerArgs": [
                 "-g"
             ],
-            "cppStandard": "gnu++17",
+            "cppStandard": "c++11",
             "intelliSenseMode": "windows-gcc-x64",
-            "compilerPath": "C:\\git-sdk-64\\mingw64\\bin\\g++.exe",
+            "compilerPath": "C:/git-sdk-64/usr/bin/g++.exe",
             "browse": {
                 "path": [
-                    "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\x86_64-w64-mingw32\\",
-                    "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\tr1\\",
-                    "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\",
+                    "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\x86_64-w64-mingw32\\*",
+                    "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\tr1\\*",
+                    "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\*",
                     "${workspaceFolder}"
                 ],
                 "limitSymbolsToIncludedHeaders": true
@@ -48,10 +46,12 @@
         },
         {
             "name": "Win32",
-            "includePath": ["C:\\git-sdk-64\\mingw64\\include\\**",
-				"C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\",
-				"C:\\git-sdk-64\\usr\\lib\\gcc\\x86_64-pc-msys\\10.2.0\\include\\c++\\tr1\\**",
-				"C:\\git-sdk-64\\usr\\lib\\gcc\\x86_64-pc-msys\\10.2.0\\include\\c++\\**",],
+            "includePath": [
+                "C:\\git-sdk-64\\mingw64\\include\\**",
+                "C:\\git-sdk-64\\mingw64\\include\\c++\\10.2.0\\",
+                "C:\\git-sdk-64\\usr\\lib\\gcc\\x86_64-pc-msys\\10.2.0\\include\\c++\\tr1\\**",
+                "C:\\git-sdk-64\\usr\\lib\\gcc\\x86_64-pc-msys\\10.2.0\\include\\c++\\**"
+            ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
