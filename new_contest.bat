@@ -1,6 +1,26 @@
 @echo off
 setlocal enabledelayedexpansion
 
+rem func: Atcoder, AC_Others, AGC-ARC-ABC, yukicoder, CodeForces, AOJ, main
+rem call-stack: main-       > [Atcoder, yukicoder, CodeForces, AOJ]
+rem             Atcoder    -> [AC_Others, ABC, ARC, AGC] -> exit
+rem             yukicoder  -> exit
+rem             CodeForces -> exit
+rem             AOJ        -> exit
+rem var: Con:[Atcoder, YukiCoder, CodeForces, AOJ] in main
+rem      Contest_kind:[ABC,ARC,AGC,others] in AtCoder
+rem      cid:[contest name]   in AC_Others
+rem          [Contest_ID]     in ABC ARC AGC
+rem          [Problem Number] in yukicoder
+rem          [Contest_ID]     in CodeForces
+rem          [contest_name]   in AOJ
+rem      Problem_Count:[Problem count] in AC_Others
+rem                    [problem count] in yukicoder
+rem                    [Problem Count] in AOJ
+
+
+
+
 rem * Released under the Eclipse Public v1.0 license.
 rem * see https://www.eclipse.org/legal/epl-v10.html
 
@@ -11,12 +31,12 @@ echo.
 cd /d %~dp0
 goto main
 
-;////////////////////////////////////
-;AtCoder
-;////////////////////////////////////
+rem ////////////////////////////////////
+rem AtCoder
+rem ////////////////////////////////////
 :AtCoder
-if not exist Atcoder mkdir AtCoder
-cd ./AtCoder/
+	if not exist Atcoder mkdir AtCoder
+	cd ./AtCoder/
     SET /P Contest_kind="Contest_kinda[ABC, ARC, AGC, others]:"
     if /i "!Contest_kind!" == "ABC" (
         goto ABC
@@ -29,9 +49,9 @@ cd ./AtCoder/
     )
 exit /b
 
-;//////////////////////////////////////
-;Atcoder_Contests
-;//////////////////////////////////////
+rem //////////////////////////////////////
+rem Atcoder_Contests
+rem //////////////////////////////////////
 :AC_Others
     SET /P cid="contest_name[eg.typical90]:"
     if not exist others mkdir others
@@ -45,7 +65,6 @@ exit /b
         set fn=!=ExitCodeAscii!.cpp
         echo //new_created: > !fn!
     )
-    pause
     exit /b
 :ABC
 :ARC
@@ -69,17 +88,17 @@ exit /b
     mkdir debug
 exit /b
 
-;//////////////////////////////////////
-;Yukicoder
-;//////////////////////////////////////
+rem //////////////////////////////////////
+rem Yukicoder
+rem //////////////////////////////////////
 :yukicoder
     if not exist yukicoder mkdir yukicoder
     cd ./yukicoder/
-    set /p pnum="Problem_Number[first problem's number]:"
-    set /p pcnt="Promlem_Count[how many problems?]:"
-    set /a pcnt=pcnt-1
-    for /L %%e in (0,1,!pcnt!) do (
-		if exist 8No!pnum!.cpp (
+    set /p cid="Problem_Number[first problem's number]:"
+    set /p Problem_Count="Promlem_Count[how many problems?]:"
+    set /a Problem_Count=!Problem_Count!-1
+    for /L %%e in (0,1,!Problem_Count!) do (
+		if exist 8No!cid!.cpp (
 			goto skip
 	   )
         echo //new_created: > No!pnum!.cpp
@@ -88,9 +107,9 @@ exit /b
     )
 exit /b
 
-;//////////////////////////////////////
-;CodeForces
-;//////////////////////////////////////
+rem //////////////////////////////////////
+rem CodeForces
+rem //////////////////////////////////////
 :CodeForces
 	if not exist CodeForces mkdir CodeForces
     cd ./CodeForces/
@@ -114,20 +133,44 @@ exit /b
 
 exit /b
 
-;//////////////////////////////////////
-;main
-;//////////////////////////////////////
+rem //////////////////////////////////////
+rem AOJ
+rem //////////////////////////////////////
+
+:AOJ
+	if not exist AOJ mkdir AOJ
+	cd ./AOJ/
+    SET /P cid="contest_name[eg.ACPC2020Day1]:"
+    if not exist !cid! mkdir !cid!
+    cd ./!cid!/
+    SET /P Problem_Count="Problem_Count[0-25]:"
+    SET /a end=!Problem_Count!+65
+    for /l %%n in (65,1,!end!) do (
+        cmd /c exit /b %%n
+        set fn=!=ExitCodeAscii!.cpp
+        echo //new_created: > !fn!
+    )
+    exit /b
+
+rem //////////////////////////////////////
+rem main
+rem //////////////////////////////////////
 :main
-	SET /P Con="contest[Atcoder, YukiCoder, CodeForces]:"
-	if not exist contest mkdir contest
+	SET /P Con="contest[Atcoder, YukiCoder, CodeForces, AOJ]:"
+	if not exist contest (
+		mkdir contest
+		mkdir others
+		mkdir lib
+	)
 	cd ./contest/
-	echo !Con!
 	if /i "!Con!" == "Atcoder" (
 		goto Atcoder
 	) else if /i "!Con!" == "YukiCoder" (
 		goto Yukicoder
 	) else if /i "!Con!" == "CodeForces" (
 		goto CodeForces
+	) else if /i "!Con!" == "AOJ" (
+		goto AOJ
 	)
 	exit /b
 
