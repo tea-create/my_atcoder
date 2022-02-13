@@ -13,5 +13,8 @@
         "ostream": "cpp",
         "iostream": "cpp"
     },
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.exclude": {
+        "**/.git": false
+    }
 }

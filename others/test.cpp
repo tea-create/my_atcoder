@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include "atcoder/internal_bit.hpp"
 
 signed main(void){
 	char c = 0;
